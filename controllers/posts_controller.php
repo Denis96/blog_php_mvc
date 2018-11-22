@@ -14,6 +14,12 @@ class PostsController {
 		}
 		// utilizamos el id para obtener el post correspondiente
 		$post = Post::find($_GET['id']);
+                $image = "";
+                if (is_null($post->image)){
+                    $image="Is null";
+                } else  {
+                    $image="Is null2";
+                }
 		require_once('views/posts/show.php');
 	}
 }

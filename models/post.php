@@ -4,11 +4,19 @@ class Post {
 	// los declaramos como públicos para acceder directamente $post->author
 	public $id;
 	public $author;
+	public $title;
 	public $content;
-	public function __construct($id, $author, $content) {
+	public $image;
+	public $created;
+	public $modified;
+	public function __construct($id, $author, $title, $content, $image, $created, $modified) {
 		$this->id = $id;
 		$this->author = $author;
+		$this->title = $title;
 		$this->content = $content;
+		$this->image = $image;
+		$this->created = $created;
+		$this->modified = $modified;
 	}
 	public static function all() {
 		$list = [];
@@ -17,7 +25,8 @@ class Post {
 
 		// creamos una lista de objectos post y recorremos la respuesta de la consulta
 		foreach($req->fetchAll() as $post) {
-		$list[] = new Post($post['id'], $post['author'], $post['content']);
+		$list[] = new Post($post['id'], $post['author'], $post['title'], $post['content'],
+                                        $post['image'], $post['created'], $post['modified']);
 		}
 		return $list;
 	}
@@ -29,7 +38,8 @@ class Post {
 		// preparamos la sentencia y reemplazamos :id con el valor de $id
 		$req->execute(array('id' => $id));
 		$post = $req->fetch();
-		return new Post($post['id'], $post['author'], $post['content']);
+		return new Post($post['id'], $post['author'], $post['title'], $post['content'],
+                                        $post['image'], $post['created'], $post['modified']);
 	}
 }
 ?>
