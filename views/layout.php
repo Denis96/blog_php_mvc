@@ -8,8 +8,9 @@
 	<body>
 		<div class="container">
 			<header class="header">
-				<a href='/2daw/M07UF2/teoria/blog_php_mvc'>Home</a>
-				<a href='?controller=posts&action=index'>Posts</a>
+				<a href='<?php echo constant('URL'); ?>'>Home</a>
+				<a href='<?php echo constant('URL'); ?>posts/index'>Posts</a>
+				<a href='<?php echo constant('URL'); ?>authors/index'>Authors</a>
 			</header>
 					
 			<hr>

@@ -8,7 +8,7 @@
 <p class="dataCrud">
 	<span><?php echo $post->title.":"; ?></span>
 	<span class="dataRight">
-		<span class="dataLeft"><a href='?controller=posts&action=show&id=<?php echo $post->id; ?>'>Visualizar</a></span>
+		<span class="dataLeft"><a href="<?php echo constant('URL'); ?>posts/show/<?php echo $post->id; ?>">Visualizar</a></span>
 		<span class="dataLeft"><a href="#">Modificar</a></span>
 		<span class="dataLeft"><a href="#">Eliminar</a></span>
 	</span>
