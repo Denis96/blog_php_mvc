@@ -11,6 +11,12 @@
 				require_once('models/post.php');
 				$controller = new PostsController();
 				break;
+			case 'author':
+				// necesitamos el modelo para después consultar a la BBDD
+				// desde el controlador
+				require_once('models/author.php');
+				$controller = new AuthorController();
+				break;
 		}
 		// llama al método guardado en $action
 		$controller->{ $action }();

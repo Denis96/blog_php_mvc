@@ -1,4 +1,4 @@
-<p><strong>Listado de los posts:</strong>
+<p><strong>Posts list:</strong>
 	<span class="dataRight">
 		<a href='?controller=posts&action=add'>Add</a></span>
 	</span>
@@ -6,7 +6,7 @@
 
 <?php foreach($posts as $post) { ?>
 <p class="dataCrud">
-	<span><?php echo $post->title.":"; ?></span>
+	<span><?php echo "#".$post->id." ".$post->title.":"; ?></span>
 	<span class="dataRight">
 		<span class="dataLeft"><a href='?controller=posts&action=show&id=<?php echo $post->id; ?>'>Show</a></span>
 		<span class="dataLeft"><a href='?controller=posts&action=updateForm&id=<?php echo $post->id; ?>'>Update</a></span>
