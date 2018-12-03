@@ -1,7 +1,7 @@
 
 RewriteEngine On
 
-RewriteBase /2daw/M07UF2/teoria/blog_php_mvc
+RewriteBase /daw/blog_php_mvc
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -1,0 +1,1 @@
+Al final tube que quitar las url amigables para poder seguir con la practica, ya no me daba muchos problemas.

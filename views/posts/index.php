@@ -1,6 +1,6 @@
 <p><strong>Listado de los posts:</strong>
 	<span class="dataRight">
-		<a href="#">Añadir</a></span>
+		<a href='?controller=posts&action=add'>Add</a></span>
 	</span>
 </p>
 
@@ -8,9 +8,9 @@
 <p class="dataCrud">
 	<span><?php echo $post->title.":"; ?></span>
 	<span class="dataRight">
-		<span class="dataLeft"><a href="<?php echo constant('URL'); ?>posts/show/<?php echo $post->id; ?>">Visualizar</a></span>
-		<span class="dataLeft"><a href="#">Modificar</a></span>
-		<span class="dataLeft"><a href="#">Eliminar</a></span>
+		<span class="dataLeft"><a href='?controller=posts&action=show&id=<?php echo $post->id; ?>'>Show</a></span>
+		<span class="dataLeft"><a href='?controller=posts&action=updateForm&id=<?php echo $post->id; ?>'>Update</a></span>
+		<span class="dataLeft"><a href='?controller=posts&action=delete&id=<?php echo $post->id; ?>'>Delete</a></span>
 	</span>
 </p>
 <?php } ?>

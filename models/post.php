@@ -18,6 +18,31 @@ class Post {
 		$this->created = $created;
 		$this->modified = $modified;
 	}
+	public function insert($author, $title, $content) {
+                $db = Db::getInstance();
+
+                $req = $db->prepare('INSERT INTO posts SET author = :author, titol = :titol, content = :content');
+                $req->execute(array('author' => $author,
+                                    'title' => $title,
+                                    'content' => $content));
+	}
+	public function update($author, $title, $content){
+                $db = Db::getInstance();
+
+                $req = $db->prepare('UPDATE posts SET author = :author, titol = :titol, content = :content, modified = :modified WHERE id = :id');
+                $req->execute(array('author' => $author,
+                                    'title' => $title,
+                                    'content' => $content,
+                                    'modified' => date('Y-m-d H:i:s'),));
+	}
+	public function delete($id){
+            
+                $db = Db::getInstance();
+                $id = intval($id);
+                $req = $db->prepare('DELETE FROM posts WHERE id = :id');
+                $req->execute(array('id' => $id));
+                
+	}
 	public static function all() {
 		$list = [];
 		$db = Db::getInstance();
